@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form action="/profile/{{$user->id}}" enctype="multipart/form-data" method="PATCH">
+        <form action="/profile/{{$user->id}}" enctype="multipart/form-data" method="POST">
             @csrf
             @method('PATCH')
             <div class="row">
@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="url" class="col-md-4 col-form-label">Url</label>
+                        <label for="url" class="col-md-4 col-form-label">URL</label>
                         <input id="url"
                                 type="text" 
                                 class="form-control @error('url') is-invalid @enderror" 
