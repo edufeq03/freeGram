@@ -13,6 +13,11 @@ class PostsController extends Controller
 
     }
 
+    public function index()
+    {
+        return view('welcome');
+    }
+
     public function create()
     {
         return view('posts.create');

@@ -7,13 +7,12 @@
             <img src="{{ $user->profile->profileImage() }}" class="rounded-circle w-100">
         </div>
 
-        <!--
-            https://instagram.fsdu3-1.fna.fbcdn.net/vp/7cd56fd32d2bf32b173ed93e24fb8165/5E7B0F26/t51.2885-19/s150x150/37108442_1933492130040283_6018283671813881856_n.jpg?_nc_ht=instagram.fsdu3-1.fna.fbcdn.net
-        -->
-
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
-                <h1>{{ $user->username }}</h1>
+                <div class="d-flex align-items-center pb-3">
+                    <div class="h4">{{ $user->username }}</div>
+                    <follow-button user-id="{{ $user->id }}"></follow-button>
+                </div>
 
                 @can('update', $user->profile)
                     <a href="/p/create">Add new Post</a>
